@@ -9,7 +9,7 @@ import Content from '../components/content'
 const IndexPage = ({ data: content }) => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Sidebar />
+    <Sidebar content={content} />
     <Content content={content} />
   </>
 )

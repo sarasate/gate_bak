@@ -8,7 +8,12 @@ const renderContent = content =>
   content.content.htmlAst.children.map((element, index) => {
     if (element.type === 'element') {
       if (element.tagName === 'h1') {
-        return <Heading key={index}> {element.children[0].value}</Heading>
+        return (
+          <Heading key={index} id={element.children[0].value.toLowerCase()}>
+            {' '}
+            {element.children[0].value}
+          </Heading>
+        )
       }
       if (element.tagName === 'blockquote') {
         return <Blockquote key={index} node={element} />

@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Sidebar from './sidebar'
-import Content from './content'
-
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -20,8 +17,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Sidebar />
-        <Content />
+        <div>{children}</div>
       </>
     )}
   />

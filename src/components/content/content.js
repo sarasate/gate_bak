@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Content = () => {
-  return <View>Content</View>
+const renderContent = content =>
+  content.content.htmlAst.children.map((element, index) => {
+    if (element.type === 'element') {
+      const Tag = `${element.tagName}`
+      return <Tag key={index}>{element.children[0].value}</Tag>
+    }
+  })
+
+const Content = ({ content }) => {
+  return <View>{renderContent(content)}</View>
 }
 
 export default Content

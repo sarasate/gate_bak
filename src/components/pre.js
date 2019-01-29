@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const renderPre = element => <pre>{renderCode(element)}</pre>
+const renderPre = element => <Pre>{renderCode(element)}</Pre>
 
 const renderCode = element =>
   element.children.map((child, index) => {
@@ -31,11 +31,11 @@ const renderText = element =>
     }
   })
 
-const Pre = ({ node }) => {
+const CodeBlock = ({ node }) => {
   return <View>{renderPre(node.children[0])}</View>
 }
 
-export default Pre
+export default CodeBlock
 
 const View = styled.div`
   background-color: #1e2224;
@@ -46,6 +46,11 @@ const View = styled.div`
   margin: 0;
   padding: 2em 28px;
   width: 50%;
+  overflow: auto;
+`
+
+const Pre = styled.pre`
+  white-space: pre;
 `
 
 const Code = styled.code`

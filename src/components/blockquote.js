@@ -34,8 +34,8 @@ const View = styled.blockquote`
   color: white;
   display: block;
   float: right;
+  font-size: 14px;
   margin: 0;
-  padding: 2em 0;
   width: 50%;
 `
 
@@ -43,6 +43,7 @@ const Paragraph = styled.p`
   background-color: #191d1f;
   color: #eee;
   padding: 13px 2em;
+  margin: 0;
 `
 
 const Text = styled.p``

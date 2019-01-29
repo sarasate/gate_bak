@@ -1,10 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const renderPre = element => <pre>{renderCode(element)}</pre>
+
 const renderCode = element =>
   element.children.map((child, index) => {
     if (child.type === 'element' && child.tagName === 'code') {
-      return <Code key={index}>{renderText(child)}</Code>
+      return (
+        <Code key={index} className={child.properties.className}>
+          {renderText(child)}
+        </Code>
+      )
     }
   })
 
@@ -14,7 +20,11 @@ const renderText = element =>
       return <Text key={index}>{child.value}</Text>
     } else if (child.type === 'element') {
       return (
-        <Text key={index} as={child.tagName}>
+        <Text
+          key={index}
+          as={child.tagName}
+          className={child.properties.className}
+        >
           {child.children[0].value}
         </Text>
       )
@@ -22,12 +32,12 @@ const renderText = element =>
   })
 
 const Pre = ({ node }) => {
-  return <View>{renderCode(node)}</View>
+  return <View>{renderPre(node.children[0])}</View>
 }
 
 export default Pre
 
-const View = styled.pre`
+const View = styled.div`
   background-color: #1e2224;
   clear: right;
   color: #fff;
@@ -43,7 +53,7 @@ const Code = styled.code`
   font-family: monospace;
   hyphens: auto;
   line-height: 1.5;
-  padding: 13px 2em;
+  padding: 0;
   margin: 0;
   word-break: break-all;
   white-space: pre;

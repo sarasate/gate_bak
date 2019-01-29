@@ -11,14 +11,12 @@ const renderContent = content =>
       if (element.tagName === 'h1') {
         return (
           <Heading key={index} id={element.children[0].value.toLowerCase()}>
-            {' '}
             {element.children[0].value}
           </Heading>
         )
-      }
-      if (element.tagName === 'blockquote') {
+      } else if (element.tagName === 'blockquote') {
         return <Blockquote key={index} node={element} />
-      } else if (element.tagName === 'pre') {
+      } else if (element.tagName === 'div') {
         return <Pre key={index} node={element} />
       } else {
         return (
@@ -28,6 +26,7 @@ const renderContent = content =>
         )
       }
     }
+    return null
   })
 
 const Content = ({ content }) => {

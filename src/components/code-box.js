@@ -1,8 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const CodeBox = () => {
-  return <View />
+import LanguageSelector from './language-selector'
+
+const CodeBox = ({ content }) => {
+  const languages = content.content.frontmatter.language_tabs
+  return (
+    <View>
+      <LanguageSelector languages={languages} />
+    </View>
+  )
 }
 
 export default CodeBox

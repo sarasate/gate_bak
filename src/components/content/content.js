@@ -36,8 +36,8 @@ const renderContent = content =>
 const Content = ({ content }) => {
   return (
     <View>
-      <CodeBox />
       {renderContent(content)}
+      <CodeBox content={content} />
     </View>
   )
 }
@@ -64,6 +64,10 @@ const Heading = styled.h1`
   padding: 0.5em 28px;
   margin-right: 50%;
   width: 50%;
+  &:first-child {
+    margin-top: 0;
+    border-top-width: 0;
+  }
 `
 
 const Paragraph = styled.div`

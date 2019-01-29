@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import '../components/index.css'
 
 import SEO from '../components/seo'
 
@@ -19,6 +20,9 @@ export default IndexPage
 export const query = graphql`
   query Content {
     content: markdownRemark {
+      frontmatter {
+        language_tabs
+      }
       htmlAst
     }
   }

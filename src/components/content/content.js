@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import CodeBox from '../code-box'
 import Blockquote from '../blockquote'
+import Pre from '../pre'
 
 const renderContent = content =>
   content.content.htmlAst.children.map((element, index) => {
@@ -18,11 +19,7 @@ const renderContent = content =>
       if (element.tagName === 'blockquote') {
         return <Blockquote key={index} node={element} />
       } else if (element.tagName === 'pre') {
-        return (
-          <RightElement key={index} as={element.children[0].tagName}>
-            {element.children[0].children[0].value}
-          </RightElement>
-        )
+        return <Pre key={index} node={element} />
       } else {
         return (
           <Paragraph as={element.tagName} key={index}>
@@ -74,15 +71,5 @@ const Paragraph = styled.div`
   display: block;
   box-sizing: border-box;
   padding: 0 28px;
-  width: 50%;
-`
-
-const RightElement = styled.div`
-  box-sizing: border-box;
-  clear: right;
-  color: white;
-  display: block;
-  float: right;
-  padding: 2em 0;
   width: 50%;
 `

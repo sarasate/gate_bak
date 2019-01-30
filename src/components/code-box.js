@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import LanguageSelector from './language-selector'
 
 const CodeBox = ({ content }) => {
-  const languages = content.content.frontmatter.language_tabs
+  const languages = content.frontmatter.language_tabs
   return (
     <View>
       <LanguageSelector languages={languages} />

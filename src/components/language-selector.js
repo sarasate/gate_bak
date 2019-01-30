@@ -1,11 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const toggleActive = e => {
+  console.log(e.currentTarget)
+  e.currentTarget.active = true
+}
+
 const LanguageSelector = ({ languages }) => {
   return (
     <View>
-      {languages.map(language => (
-        <Item href="#" key={language}>
+      {languages.map((language, index) => (
+        <Item
+          href="#"
+          key={language}
+          active={index === 0}
+          onClick={e => toggleActive(e)}
+        >
           {language}
         </Item>
       ))}
@@ -27,6 +37,7 @@ const Item = styled.a`
   display: block;
   float: left;
   font-size: 14px;
+  background-color: ${({ active }) => (active ? '#2e3336' : 'inherit')};
   color: #fff;
   text-decoration: none;
   padding: 0 10px;

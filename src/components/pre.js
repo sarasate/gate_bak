@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const renderPre = element => <Pre>{renderCode(element)}</Pre>
+const renderPre = (element, languages) => (
+  <Pre>{renderCode(element, languages)}</Pre>
+)
 
 const renderCode = element =>
   element.children.map((child, index) => {
@@ -31,8 +33,10 @@ const renderText = element =>
     }
   })
 
-const CodeBlock = ({ node }) => {
-  return <View>{renderPre(node.children[0])}</View>
+const CodeBlock = ({ node, languages }) => {
+  if (node.properties.dataLanguage === languages[0])
+    return <View active={true}>{renderPre(node.children[0], languages)}</View>
+  else return <View>{renderPre(node.children[0], languages)}</View>
 }
 
 export default CodeBlock
@@ -41,6 +45,7 @@ const View = styled.div`
   background-color: #1e2224;
   clear: right;
   color: #fff;
+  display: ${({ active }) => (active ? 'block' : 'none')};
   box-sizing: border-box;
   float: right;
   margin: 0;

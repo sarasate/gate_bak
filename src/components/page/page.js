@@ -6,7 +6,7 @@ import Blockquote from '../blockquote'
 import Pre from '../pre'
 
 const renderContent = content =>
-  content.content.htmlAst.children.map((element, index) => {
+  content.htmlAst.children.map((element, index) => {
     if (element.type === 'element') {
       if (element.tagName === 'h1') {
         return (
@@ -17,7 +17,13 @@ const renderContent = content =>
       } else if (element.tagName === 'blockquote') {
         return <Blockquote key={index} node={element} />
       } else if (element.tagName === 'div') {
-        return <Pre key={index} node={element} />
+        return (
+          <Pre
+            key={index}
+            node={element}
+            languages={content.frontmatter.language_tabs}
+          />
+        )
       } else {
         return (
           <Paragraph as={element.tagName} key={index}>

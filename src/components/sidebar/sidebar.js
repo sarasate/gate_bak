@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const renderTOC = ({ content }) =>
+const renderTOC = content =>
   content.headings.map(element => {
     if (element.depth === 1) {
       return (

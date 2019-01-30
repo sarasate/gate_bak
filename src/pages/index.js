@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import Sidebar from '../components/sidebar'
 import Page from '../components/page'
 
-const IndexPage = ({ data: content }) => (
+const IndexPage = ({ data: { content } }) => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Sidebar content={content} />

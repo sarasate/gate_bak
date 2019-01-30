@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import CodeBox from '../code-box'
 import Blockquote from '../blockquote'
 import Pre from '../pre'
+import Paragraph from './components/paragraph'
 
 const renderContent = content =>
   content.htmlAst.children.map((element, index) => {
@@ -25,11 +26,7 @@ const renderContent = content =>
           />
         )
       } else {
-        return (
-          <Paragraph as={element.tagName} key={index}>
-            {element.children[0].value}
-          </Paragraph>
-        )
+        return <Paragraph element={element} key={index} />
       }
     }
     return null
@@ -74,11 +71,4 @@ const Heading = styled.h1`
     margin-top: 0;
     border-top-width: 0;
   }
-`
-
-const Paragraph = styled.div`
-  display: block;
-  box-sizing: border-box;
-  padding: 0 28px;
-  width: 50%;
 `

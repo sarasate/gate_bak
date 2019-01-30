@@ -23,6 +23,10 @@ export const query = graphql`
       frontmatter {
         language_tabs
       }
+      headings {
+        value
+        depth
+      }
       htmlAst
     }
   }

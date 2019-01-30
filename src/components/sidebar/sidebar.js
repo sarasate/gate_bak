@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const renderTOC = ({ content }) =>
-  content.htmlAst.children.map(element => {
-    if (element.type === 'element' && element.tagName === 'h1') {
+  content.headings.map(element => {
+    if (element.depth === 1) {
       return (
         <Item>
-          <Anchor href={`#${element.children[0].value.toLowerCase()}`}>
-            {element.children[0].value}
+          <Anchor href={`#${element.value.toLowerCase()}`}>
+            {element.value}
           </Anchor>
         </Item>
       )

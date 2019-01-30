@@ -5,6 +5,16 @@ const renderChildren = element =>
   element.children.map(item => <span>{item.value}</span>)
 
 const Paragraph = ({ element }) => {
+  console.log(element)
+  if (element.type === 'element' && element.tagName === 'aside') {
+    if (element.properties.className.includes('notice'))
+      return <Notice>{renderChildren(element)}</Notice>
+    if (element.properties.className.includes('success'))
+      return <Success>{renderChildren(element)}</Success>
+    if (element.properties.className.includes('warning'))
+      return <Warning>{renderChildren(element)}</Warning>
+  }
+
   return <View as={element.tagName}>{renderChildren(element)}</View>
 }
 
@@ -15,4 +25,23 @@ const View = styled.div`
   box-sizing: border-box;
   padding: 0 28px;
   width: 50%;
+`
+
+const Notice = styled.aside`
+  padding: 1em 28px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  background: #8fbcd4;
+  line-height: 1.6;
+  margin-right: 50%;
+  box-sizing: border-box;
+  display: block;
+`
+
+const Success = styled(Notice)`
+  background: #6ac174;
+`
+
+const Warning = styled(Notice)`
+  background: #c97a7e;
 `

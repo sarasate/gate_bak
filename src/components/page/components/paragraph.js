@@ -2,7 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const renderChildren = element =>
-  element.children.map(item => <span>{item.value}</span>)
+  element.children.map(item => {
+    if (item.type === 'element' && item.tagName === 'code')
+      return <Code>{item.children[0].value}</Code>
+    return <Span as={item.tagName}>{item.value}</Span>
+  })
 
 const Paragraph = ({ element }) => {
   console.log(element)
@@ -44,4 +48,9 @@ const Success = styled(Notice)`
 
 const Warning = styled(Notice)`
   background: #c97a7e;
+`
+
+const Span = styled.span``
+const Code = styled.code`
+  display: inline;
 `

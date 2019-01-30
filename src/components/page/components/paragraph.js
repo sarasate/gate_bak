@@ -9,7 +9,6 @@ const renderChildren = element =>
   })
 
 const Paragraph = ({ element }) => {
-  console.log(element)
   if (element.type === 'element' && element.tagName === 'aside') {
     if (element.properties.className.includes('notice'))
       return <Notice>{renderChildren(element)}</Notice>

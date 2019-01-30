@@ -5,13 +5,13 @@ import '../components/index.css'
 import SEO from '../components/seo'
 
 import Sidebar from '../components/sidebar'
-import Content from '../components/content'
+import Page from '../components/page'
 
 const IndexPage = ({ data: content }) => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Sidebar content={content} />
-    <Content content={content} />
+    <Page content={content} />
   </>
 )
 

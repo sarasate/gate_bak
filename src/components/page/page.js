@@ -29,24 +29,28 @@ const renderContent = content =>
     return null
   })
 
-const Content = ({ content }) => {
+const Page = ({ content }) => {
   return (
     <View>
-      {renderContent(content)}
       <CodeBox content={content} />
+      <Content>{renderContent(content)}</Content>
     </View>
   )
 }
 
-export default Content
-
+export default Page
 const View = styled.div`
   background-color: #f3f7f9;
   display: block;
   margin-left: 230px;
   min-height: 100%;
+  padding-bottom: 1rem;
   position: relative;
-  z-index: 10;
+  z-index: 30;
+`
+
+const Content = styled.div`
+  position: relative;
 `
 
 const Heading = styled.h1`

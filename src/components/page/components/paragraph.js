@@ -3,8 +3,15 @@ import styled from 'styled-components'
 
 const renderChildren = element =>
   element.children.map(item => {
-    if (item.type === 'element' && item.tagName === 'code')
-      return <Code>{item.children[0].value}</Code>
+    if (item.type === 'element') {
+      if (item.tagName === 'code') return <Code>{item.children[0].value}</Code>
+      if (item.tagName === 'a')
+        return (
+          <Link target="_blank" href={item.properties.href}>
+            {item.children[0].value}
+          </Link>
+        )
+    }
     return <Span as={item.tagName}>{item.value}</Span>
   })
 
@@ -53,3 +60,4 @@ const Span = styled.span``
 const Code = styled.code`
   display: inline;
 `
+const Link = styled.a``

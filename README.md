@@ -38,6 +38,11 @@ Companies Using Slate
 
 * [Lawlift](https://www.lawlift.de/)
 
+Limitations / Issues
+--------------------
+Syntax Highlighting: Currently only `bash` is processed by prismjs. 
+`shell` or `curl` don't work.
+
 Questions? Help needed? Found a bug?
 --------------------
 

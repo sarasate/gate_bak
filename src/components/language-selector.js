@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const toggleActive = (e, language) => {
-  window.language = language
+  if (typeof window !== 'undefined') window.language = language
 }
 
 const LanguageSelector = ({ languages }) => {
+  if (typeof window === 'undefined') return null
   if (!window.language) window.language = languages[0]
   return (
     <View>

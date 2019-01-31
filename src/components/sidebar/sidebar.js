@@ -5,7 +5,7 @@ const renderTOC = content =>
   content.headings.map(element => {
     if (element.depth === 1) {
       return (
-        <Item>
+        <Item key={element.value}>
           <Anchor href={`#${element.value.toLowerCase()}`}>
             {element.value}
           </Anchor>

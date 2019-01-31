@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const toggleActive = e => {
-  e.currentTarget.active = true
+const toggleActive = (e, language) => {
+  window.language = language
 }
 
 const LanguageSelector = ({ languages }) => {
+  if (!window.language) window.language = languages[0]
   return (
     <View>
-      {languages.map((language, index) => (
+      {languages.map(language => (
         <Item
           href="#"
           key={language}
-          active={index === 0}
-          onClick={e => toggleActive(e)}
+          active={language === window.language}
+          onClick={e => toggleActive(e, language)}
         >
           {language}
         </Item>

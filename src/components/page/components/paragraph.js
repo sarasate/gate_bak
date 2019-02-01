@@ -58,6 +58,13 @@ const Warning = styled(Notice)`
 
 const Span = styled.span``
 const Code = styled.code`
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
   display: inline;
+  font-size: 12px;
+  font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
+    'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace,
+    serif;
+  padding: 4px;
 `
 const Link = styled.a``

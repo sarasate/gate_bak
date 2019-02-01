@@ -25,10 +25,9 @@ const Paragraph = ({ element }) => {
       return <Warning>{renderChildren(element)}</Warning>
   }
 
-  return <View as={element.tagName}>{renderChildren(element)}</View>
+  // return <View as={element.tagName}>{renderChildren(element)}</View>
+  return View
 }
-
-export default Paragraph
 
 const View = styled.div`
   display: block;
@@ -68,3 +67,5 @@ const Code = styled.code`
   padding: 4px;
 `
 const Link = styled.a``
+
+export default View

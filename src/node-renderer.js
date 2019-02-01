@@ -1,7 +1,7 @@
 import { Nodes } from './node-mapping'
 
 export const renderNodes = nodes => {
-  return nodes.map(node => {
+  return nodes.map((node, index) => {
     if (node.type === 'element') {
       const tag = Nodes[node.tagName] || Nodes['default']
 
@@ -10,6 +10,7 @@ export const renderNodes = nodes => {
         return tag.render({
           children: renderNodes(node.children),
           href: node.properties.href,
+          key: index,
         })
       const language = node.properties && node.properties.dataLanguage
       // Check for code language examples
@@ -21,6 +22,7 @@ export const renderNodes = nodes => {
         children: renderNodes(node.children),
         className: node.properties.className,
         active,
+        key: index,
       })
       return element
     } else if (node.type === 'text') {

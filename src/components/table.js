@@ -1,28 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const renderSegment = element =>
-  element.children.map(segment => (
-    <Element as={segment.tagName}>{renderRow(segment)}</Element>
-  ))
-
-const renderRow = element =>
-  element.children.map(row => (
-    <Element as={row.tagName}>{renderCell(row)}</Element>
-  ))
-
-const renderCell = element =>
-  element.children.map(cell => (
-    <Element as={cell.tagName}>{cell.children[0].value}</Element>
-  ))
-
-const Component = ({ element }) => {
-  return <Table>{renderSegment(element)}</Table>
-}
-
-export default Component
-
-const Table = styled.table`
+export const Table = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   box-sizing: border-box;
@@ -32,9 +11,15 @@ const Table = styled.table`
   overflow: auto;
   padding: 0 28px;
 `
-const Element = styled.div`
-  background-color: ${({ as }) => (as === 'tbody' ? 'white' : 'inherit')};
-  padding: ${({ as }) => (as === 'td' ? '10px' : 0)};
+export const TableHead = styled.thead``
+export const TableBody = styled.tbody`
+  background: white;
 `
-
-const TableHead = styled.thead``
+export const TableRow = styled.tr``
+export const TableHeading = styled.th`
+  text-align: left;
+  padding: 10px;
+`
+export const TableCell = styled.td`
+  padding: 10px;
+`

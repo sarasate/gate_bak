@@ -1,4 +1,12 @@
 import Blockquote from './components/blockquote'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeading,
+  TableRow,
+} from './components/table'
 import styled from 'styled-components'
 
 const Heading1 = styled.h1`
@@ -25,6 +33,9 @@ const Heading2 = styled.h2`
   padding: 0.5em 28px;
 `
 const Heading3 = styled.h3`
+  font-size: 15px;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
   padding: 0.5em 28px;
 `
 
@@ -44,7 +55,7 @@ const Aside = styled.aside`
       ? '#c97a7e'
       : className.includes('success')
       ? '#6ac174'
-      : '#8fbcd'};
+      : 'rgb(143, 188, 212)'};
   padding: 1em 28px;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -135,5 +146,11 @@ export const Nodes = {
   success: Success,
   warning: Warning,
   span: Span,
+  table: Table,
+  thead: TableHead,
+  tbody: TableBody,
+  th: TableHeading,
+  tr: TableRow,
+  td: TableCell,
   default: Default,
 }

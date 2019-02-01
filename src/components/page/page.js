@@ -61,14 +61,17 @@ const Content = styled.div`
 
 const Heading = styled.h1`
   background-color: white;
-  border-bottom: 1px solid silver;
+  border-bottom: 1px solid #ccc;
   border-top: 1px solid silver;
   box-sizing: border-box;
   clear: both;
   display: block;
   font-size: 25px;
+  line-height: normal;
   padding: 0.5em 28px;
+  margin-bottom: 21px;
   margin-right: 50%;
+  margin-top: 2em;
   width: 50%;
   &:first-child {
     margin-top: 0;

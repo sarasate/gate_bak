@@ -35,9 +35,10 @@ const renderText = element =>
 
 const CodeBlock = ({ node, languages }) => {
   // if (node.properties.dataLanguage === languages[0])
+  const language = node.properties.dataLanguage
   if (typeof window !== 'undefined') {
     return (
-      <View active={node.properties.dataLanguage === window.language}>
+      <View active={language === 'json' || language === window.language}>
         {renderPre(node.children[0], languages)}
       </View>
     )

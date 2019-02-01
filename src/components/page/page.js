@@ -5,6 +5,7 @@ import CodeBox from '../code-box'
 import Blockquote from '../blockquote'
 import Pre from '../pre'
 import Paragraph from './components/paragraph'
+import Table from '../table'
 
 const renderContent = content =>
   content.htmlAst.children.map((element, index) => {
@@ -25,6 +26,8 @@ const renderContent = content =>
             languages={content.frontmatter.language_tabs}
           />
         )
+      } else if (element.tagName === 'table') {
+        return <Table element={element} />
       } else {
         return <Paragraph element={element} key={index} />
       }

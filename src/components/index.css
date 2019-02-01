@@ -19,3 +19,7 @@ body {
     margin:0;
     padding:0;
 }
+
+tHead{
+    border-bottom: 1px solid silver;
+}

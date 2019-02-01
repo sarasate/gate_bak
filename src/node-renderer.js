@@ -26,5 +26,7 @@ export const renderNodes = nodes => {
     } else if (node.type === 'text') {
       return node.value
     }
+
+    return null
   })
 }

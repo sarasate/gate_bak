@@ -12,6 +12,7 @@ const renderTOC = content =>
         </Item>
       )
     }
+    return null
   })
 
 const TOC = ({ content }) => {

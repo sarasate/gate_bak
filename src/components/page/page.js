@@ -5,6 +5,8 @@ import { renderNodes } from '../../node-renderer'
 import CodeBox from '../code-box'
 
 const Page = ({ content }) => {
+  if (typeof window === 'undefined') return null
+  if (!window.language) window.language = content.frontmatter.language_tabs[0]
   return (
     <View>
       <CodeBox content={content} />

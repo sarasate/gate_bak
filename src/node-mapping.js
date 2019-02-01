@@ -114,9 +114,10 @@ const Code = styled.code`
   margin: 0;
   word-break: break-all;
   white-space: pre;
-  ${Paragraph} & {
+  ${Paragraph} &,  ${Aside} & {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 2px;
+    color: rgb(51, 51, 51);
     display: inline;
     font-size: 12px;
     font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono',

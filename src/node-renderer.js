@@ -18,11 +18,17 @@ export const renderNodes = nodes => {
         typeof window !== 'undefined' &&
         node.tagName === 'div' &&
         (language === 'json' || language === window.language)
+      // Get anchor id's for headings
+      const id =
+        (node.tagName === 'h1' || 'h2' || 'h2') &&
+        node.children[0].value &&
+        node.children[0].value.toLowerCase()
       const element = tag.render({
         children: renderNodes(node.children),
         className: node.properties.className,
         active,
         key: index,
+        id,
       })
       return element
     } else if (node.type === 'text') {

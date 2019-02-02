@@ -22,7 +22,6 @@ const TOC = ({ content }) => {
     </View>
   )
 }
-export default TOC
 
 const View = styled.div`
   bottom: 0;
@@ -64,3 +63,4 @@ const Anchor = styled.a`
   transition-timing-function: linear;
   transition-duration: 130ms;
 `
+export default TOC

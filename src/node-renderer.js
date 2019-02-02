@@ -1,6 +1,6 @@
 import { Nodes } from './node-mapping'
 
-export const renderNodes = nodes => {
+export const renderNodes = (nodes, lang) => {
   return nodes.map((node, index) => {
     if (node.type === 'element') {
       const tag = Nodes[node.tagName] || Nodes['default']
@@ -14,10 +14,7 @@ export const renderNodes = nodes => {
         })
       const language = node.properties && node.properties.dataLanguage
       // Check for code language examples
-      const active =
-        typeof window !== 'undefined' &&
-        node.tagName === 'div' &&
-        (language === 'json' || language === window.language)
+      const active = language === 'json' || language === lang
       // Get anchor id's for headings
       const id =
         (node.tagName === 'h1' || 'h2' || 'h2') &&

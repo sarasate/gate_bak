@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 import LanguageSelector from './language-selector'
 
-const CodeBox = ({ content }) => {
+const CodeBox = ({ content, lang }) => {
   const languages = content.frontmatter.language_tabs
   return (
     <View>
-      <LanguageSelector languages={languages} />
+      <LanguageSelector languages={languages} lang={lang} />
     </View>
   )
 }

@@ -4,13 +4,13 @@ import { renderNodes } from '../../node-renderer'
 
 import CodeBox from '../code-box'
 
-const Page = ({ content }) => {
-  if (typeof window === 'undefined') return null
-  if (!window.language) window.language = content.frontmatter.language_tabs[0]
+const Page = ({ content, location }) => {
+  // Get selected language from url
+  const lang = location.search.replace('?', '')
   return (
     <View>
-      <CodeBox content={content} />
-      <Content>{renderNodes(content.htmlAst.children)}</Content>
+      <CodeBox content={content} lang={lang} />
+      <Content>{renderNodes(content.htmlAst.children, lang)}</Content>
     </View>
   )
 }

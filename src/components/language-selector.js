@@ -1,20 +1,19 @@
 import React from 'react'
+import { navigate } from '@reach/router'
 import styled from 'styled-components'
 
 const toggleActive = (e, language) => {
-  if (typeof window !== 'undefined') window.language = language
+  navigate(`/?${language}`)
 }
 
-const LanguageSelector = ({ languages }) => {
-  if (typeof window === 'undefined') return null
-  if (!window.language) window.language = languages[0]
+const LanguageSelector = ({ languages, lang }) => {
   return (
     <View>
       {languages.map(language => (
         <Item
           href="#"
           key={language}
-          active={language === window.language}
+          active={language === lang}
           onClick={e => toggleActive(e, language)}
         >
           {language}

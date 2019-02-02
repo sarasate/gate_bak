@@ -18,7 +18,7 @@ export const TableBody = styled.tbody`
 export const TableRow = styled.tr``
 export const TableHeading = styled.th`
   text-align: left;
-  padding: 10px;
+  padding: 5px 10px;
 `
 export const TableCell = styled.td`
   padding: 10px;

@@ -6,7 +6,8 @@ import CodeBox from '../code-box'
 
 const Page = ({ content, location }) => {
   // Get selected language from url
-  const lang = location.search.replace('?', '')
+  const lang =
+    location.search.replace('?', '') || content.frontmatter.language_tabs[0]
   return (
     <View>
       <CodeBox content={content} lang={lang} />

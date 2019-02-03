@@ -37,6 +37,7 @@ const Item = styled.a`
   display: block;
   float: left;
   font-size: 14px;
+  font-weight: bold;
   background-color: ${({ active }) => (active ? '#2e3336' : 'inherit')};
   color: #fff;
   text-decoration: none;

@@ -25,9 +25,17 @@ const View = styled.div`
   min-height: 100%;
   padding-bottom: 1rem;
   position: relative;
-  z-index: 30;
+  z-index: 10;
 `
 
 const Content = styled.div`
+  display: block;
   position: relative;
+  z-index: 30;
+  // Fix full height for background color
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 `

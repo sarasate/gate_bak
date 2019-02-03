@@ -1,5 +1,5 @@
 import { Aside } from './components/aside'
-import Blockquote from './components/blockquote'
+import { Blockquote } from './components/blockquote'
 import { Default } from './components/default'
 import { Div } from './components/div'
 import { Code } from './components/code'

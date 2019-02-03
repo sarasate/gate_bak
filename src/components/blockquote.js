@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default styled.blockquote`
+export const Blockquote = styled.blockquote`
   background-color: #191c1e;
   box-sizing: border-box;
   clear: right;

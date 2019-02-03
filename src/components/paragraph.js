@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Blockquote from './blockquote'
+import { Blockquote } from './blockquote'
 
 export const Paragraph = styled.p`
   display: block;

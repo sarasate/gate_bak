@@ -1,18 +1,19 @@
 <p align="center">Gate helps you create beautiful and responsive documentation for your API's.</p>
 
+Heavily inspired by [Slate](https://github.com/lord/slate) (hence the name).
+You can use the same markdown files as in slate.
+
 
 Features
 ------------
 
-* **Clean, intuitive design** 
+* **Clean and simple design** 
 
 * **Single Page Layout** 
 
-* **Mardkdown** 
+* **Markdown source** 
 
 * **Syntax highlighting** 
-
-* **RTL Support** 
 
 Get started
 ------------------------------
@@ -21,19 +22,20 @@ Get started
 
 What you need:
 
- - **GatsbyJS** 
+ - **[GatsbyJS](https://www.gatsbyjs.org)** 
+ - **Node**
 
 ### Set Up
 
 1. Fork this repository on GitHub.
 2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/gate.git`
 3. `cd gate`
-4. Initialize and start Slate: `gatsby develop`
+4. Start Gate: `gatsby develop`
 
 Your docs are now available at http://localhost:8000. Easy. 
 
 
-Companies Using Slate
+Companies Using Gate
 ---------------------------------
 
 * [Lawlift](https://www.lawlift.de/)
@@ -46,7 +48,7 @@ Syntax Highlighting: Currently only `bash` is processed by prismjs.
 Questions? Help needed? Found a bug?
 --------------------
 
-Found a bug with upstream Slate? Go ahead and [submit an issue](https://github.com/sarasate/gate/issues). 
+Found a bug? Please [submit an issue](https://github.com/sarasate/gate/issues). 
 
 Contributors
 --------------------

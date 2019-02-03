@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Blockquote } from './blockquote'
 import { Paragraph } from './paragraph'
 import { Aside } from './aside'
 
@@ -21,5 +22,8 @@ export const Code = styled.code`
       'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace,
       serif;
     padding: 4px;
+  }
+  ${Blockquote} & {
+    color: white;
   }
 `

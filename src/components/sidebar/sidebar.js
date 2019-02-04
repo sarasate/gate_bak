@@ -17,7 +17,6 @@ const renderTOC = content =>
   })
 
 const TOC = ({ content, data }) => {
-  console.log(data)
   return (
     <StaticQuery
       query={query}
@@ -33,7 +32,7 @@ const TOC = ({ content, data }) => {
 
 export default TOC
 
-export const query = graphql`
+const query = graphql`
   query SiteQuery {
     site {
       siteMetadata {

@@ -3,6 +3,7 @@ Gate generates pretty and well structured API documentation.
 Heavily inspired by [Slate](https://github.com/lord/slate), and hence by [Stripes](https://stripe.com/docs/api) API docs.
 You can use the same markdown files as in slate.
 
+[Demo](https://gatejs.netlify.com)
 
 Features
 ------------
